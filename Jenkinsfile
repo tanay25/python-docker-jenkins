@@ -13,7 +13,7 @@ pipeline{
 		stage("Build Docker Image")
 		{
 			steps{
-				sh 'docker build -t tanay25/python-docker-jenkins .'
+				sh 'docker build -t python-docker-jenkins .'
 			}
 		}
 		stage("Stop Old Container"){
@@ -27,7 +27,7 @@ pipeline{
 		stage("Docker Container Run"){
 			steps{
 				sh '''
-					docker run -d --name python-docker - 5000:5000 tanay25/python-docker-jenkins 
+					docker run -d --name python-docker - 5000:5000 python-docker-jenkins 
 				'''			
 
 			}	
